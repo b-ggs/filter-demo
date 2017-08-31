@@ -1,0 +1,14 @@
+<%= form_tag('/', method: 'get') do %>
+  <%= text_field_tag 'query' %>
+  <%= radio_button_tag 'field', 'name' %> Name
+  <%= radio_button_tag 'field', 'position' %> Position
+  <%= submit_tag 'Filter' %>
+<% end %>
+<% @engineers.each do |engineer| %>
+  <div>
+    Name: <%= engineer.name %>
+  </div>
+  <div>
+    Position: <%= engineer.position %>
+  </div>
+<% end %>
